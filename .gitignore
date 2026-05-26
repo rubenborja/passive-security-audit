@@ -1,0 +1,30 @@
+# Reportes generados (datos sensibles, no subir)
+reports/*.xlsx
+reports/*.json
+reports/*.txt
+!reports/.gitkeep
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+ENV/
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Sistema
+*.log
