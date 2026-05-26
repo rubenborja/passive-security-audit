@@ -36,7 +36,7 @@ Todo lo que el script obtiene está disponible para cualquier visitante normal d
 Requiere Python 3.8 o superior.
 
 ```bash
-git clone https://github.com/<TU_USUARIO>/passive-security-audit.git
+git clone https://github.com/rubenborja/passive-security-audit.git
 cd passive-security-audit
 pip install -r requirements.txt
 ```
@@ -62,24 +62,24 @@ python src/audit.py
 
 Los reportes se generan en la carpeta `reports/`:
 
-- `reporte_seguridad.xlsx` — Excel con cuatro hojas:
+- `reporte_seguridad.xlsx` - Excel con cuatro hojas:
   - **Resumen ejecutivo**: tabla compacta con conteo por severidad para cada sistema (lista para incluir en el paper).
   - **Hallazgos detallados**: una fila por hallazgo, 16 columnas con vector, escenario e impacto incluidos.
   - **Por categoría**: agrupación útil para gráficos.
   - **Metodología**: bloque de metadatos para anexar al artículo.
-- `resultados.json` — datos crudos para post-procesamiento (matrices de riesgo, gráficas con matplotlib, análisis estadístico, etc.)
+- `resultados.json` - datos crudos para post-procesamiento (matrices de riesgo, gráficas con matplotlib, análisis estadístico, etc.)
 
 ## Estructura del proyecto
 
 ```
 passive-security-audit/
 ├── src/
-│   └── audit.py              # Script principal
-├── reports/                  # Salidas (se genera al ejecutar)
+│   └── audit.py # Script principal
+├── reports/ # Salidas (se genera al ejecutar)
 │   ├── reporte_seguridad.xlsx
 │   └── resultados.json
 ├── docs/
-│   └── methodology.md        # Notas sobre metodología
+│   └── methodology.md # Notas sobre metodología
 ├── requirements.txt
 ├── .gitignore
 ├── LICENSE
@@ -142,14 +142,14 @@ Aun así, se recomienda:
 Si usas este código en investigación académica, puedes citarlo así:
 
 ```
-[Tu Apellido], [Tu Nombre]. (2026). Auditor pasivo de seguridad web bajo el marco
+Ing. Rubén Borja U., MSc. (2026) Auditor pasivo de seguridad web bajo el marco
 OWASP API Security Top 10:2023 [Software]. GitHub.
-https://github.com/<TU_USUARIO>/passive-security-audit
+https://github.com/rubenborja/passive-security-audit
 ```
 
 ## Licencia
 
-MIT — ver [LICENSE](LICENSE).
+MIT - ver [LICENSE](LICENSE).
 
 ## Contribuir
 
