@@ -1,11 +1,9 @@
-# -*- coding: utf-8 -*-
 """
 Validación cruzada automatizada de una submuestra de hallazgos (observación R1-7).
 
 Requiere: pip install requests --break-system-packages   (en Windows, sin el flag)
 
-Uso:
-    python validar_hallazgos.py
+Uso: python validar_hallazgos.py
 
 Lee resultados.json (el reporte original de la herramienta), toma la misma
 muestra estratificada de 25 hallazgos que ya se revisó manualmente, vuelve a
@@ -23,19 +21,19 @@ from collections import defaultdict
 
 import requests
 
-# --- Configuración ---------------------------------------------------------
+# Configuración
 
 # El script vive en .../src/. El reporte vive en .../reports/, una carpeta
 # arriba y al lado de src/. Esto se calcula a partir de la ubicación real del
 # archivo .py, no de la carpeta desde donde lo ejecutes.
 CARPETA_SCRIPT = os.path.dirname(os.path.abspath(__file__))
-CARPETA_PROYECTO = os.path.dirname(CARPETA_SCRIPT)          # un nivel arriba de src/
+CARPETA_PROYECTO = os.path.dirname(CARPETA_SCRIPT) # un nivel arriba de src/
 CARPETA_REPORTS = os.path.join(CARPETA_PROYECTO, "reports")
 NOMBRE_JSON_POR_DEFECTO = "resultados.json"
 
 SALIDA_JSON = os.path.join(CARPETA_REPORTS, "validacion_R17.json")
 TIMEOUT = 15
-PAUSA_ENTRE_PORTALES = (1.0, 3.0)        # segundos, pausa aleatoria entre URLs distintas
+PAUSA_ENTRE_PORTALES = (1.0, 3.0) # segundos, pausa aleatoria entre URLs distintas
 
 UA = {
     "User-Agent": (
@@ -61,7 +59,7 @@ CUOTA = {"API8": 13, "API2": 6, "API3": 3, "API10": 2, "API9": 1}
 ORIGEN_PRUEBA_CORS = "https://sitio-ajeno.example.com"
 
 
-# --- Muestreo (idéntico al usado en la revisión manual previa) -------------
+# Muestreo (idéntico al usado en la revisión manual previa)
 
 def localizar_json(ruta_forzada=None):
     """
@@ -126,7 +124,7 @@ def cargar_muestra(ruta_json, cuota):
     return muestra
 
 
-# --- Utilidades de red -------------------------------------------------------
+# Utilidades de red
 
 def obtener(url, origen=None):
     """GET simple, no intrusivo. Devuelve headers, cuerpo y cookies crudas."""
@@ -151,7 +149,7 @@ def obtener(url, origen=None):
         return {"ok": False, "error": str(e)}
 
 
-# --- Verificación por categoría ---------------------------------------------
+# Verificación por categoría
 
 def verificar(hallazgo, cache):
     url = URL[hallazgo["sistema"]]
@@ -253,7 +251,7 @@ def verificar(hallazgo, cache):
     return resultado
 
 
-# --- Orquestación ------------------------------------------------------------
+# Orquestación
 
 def main():
     ruta_forzada = sys.argv[1] if len(sys.argv) > 1 else None
