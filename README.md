@@ -1,4 +1,4 @@
-# Auditor Pasivo de Seguridad Web
+# Auditor Pasivo de Seguridad
 
 Herramienta en Python para evaluar la postura de seguridad de aplicaciones web públicas, sin pruebas intrusivas. El catálogo de hallazgos sigue el marco **OWASP API Security Top 10:2023**.
 
