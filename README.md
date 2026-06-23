@@ -142,7 +142,7 @@ Aun así, se recomienda:
 Si usas este código en investigación académica, puedes citarlo así:
 
 ```
-Ing. Rubén Borja U., MSc. (2026) Auditor pasivo de seguridad web bajo el marco
+Nombre anónimo. (2026) Auditor pasivo de seguridad web bajo el marco
 OWASP API Security Top 10:2023 [Software]. GitHub.
 https://github.com/rubenborja/passive-security-audit
 ```
